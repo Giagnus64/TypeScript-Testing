@@ -66,29 +66,29 @@
 // }
 
 
-enum FieldPosition {GOALIE, STRIKER, MIDFIELD, DEFENDER};
-// pre-declared types
-const player: {
-    name: 'Bob';
-    age: 24;
-    hobbies: string[];
-    team: [string, number];
-    position: number;
-} = {
-    name : 'Bob',
-    age: 24,
-    hobbies: ['books', 'music'],
-    team: ['AC Milan', 35],
-    position: FieldPosition.GOALIE
-}
-//type inference
-const player = {
-    name : 'Bob',
-    age: '24',
-    hobbies: ['books', 'music'],
-    team: ['AC Milan', 35],
-    fieldPosition: FieldPosition.GOALIE
-}
+// enum FieldPosition {GOALIE, STRIKER, MIDFIELD, DEFENDER};
+// // pre-declared types
+// const player: {
+//     name: 'Bob';
+//     age: 24;
+//     hobbies: string[];
+//     team: [string, number];
+//     position: number;
+// } = {
+//     name : 'Bob',
+//     age: 24,
+//     hobbies: ['books', 'music'],
+//     team: ['AC Milan', 35],
+//     position: FieldPosition.GOALIE
+// }
+// //type inference
+// const player = {
+//     name : 'Bob',
+//     age: '24',
+//     hobbies: ['books', 'music'],
+//     team: ['AC Milan', 35],
+//     fieldPosition: FieldPosition.GOALIE
+// }
 
 
 
@@ -99,3 +99,31 @@ console.log(person.position)
 // for(const hobby of person.hobbies){
 //     //can do string manip because we KNOW that the type will be a string 
 // }
+
+
+//union types
+
+function add(thing1: number | string, thing2: number | string){
+    let result
+    if(typeof thing1 === 'number' && typeof thing2 === 'number'){
+        result = thing1 + thing2
+    } else {
+        result = input1.toString() + input2.toString()
+    }
+    return result
+}
+
+type FieldPosition = 'GOALIE' | 'STRIKER'|'MIDFIELD'|'DEFENDER' 
+
+//Literal and Type Aliases
+const player: {
+    name: string;
+    age: number;
+    hobbies: string[];
+    position: FieldPosition
+} = {
+    name: "Bob",
+    age: 23,
+    hobbies: ["books", "music"],
+    position: 'GOALIE'
+}
