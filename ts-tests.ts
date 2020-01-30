@@ -129,6 +129,11 @@ const player: PlayerConfig = {
     hobbies: ["books", "music"],
     position: 'GOALIE'
 }
+class Player implements PlayerConfig {
+    constructor(public name: string, public age: number, public position: FieldPosition){}
+}
+
+const dude = new Player("Dan", 23, 'GOALIE')
 
 // check the cool Class/Interface stuff
 
