@@ -103,27 +103,64 @@ console.log(person.position)
 
 //union types
 
-function add(thing1: number | string, thing2: number | string){
-    let result
-    if(typeof thing1 === 'number' && typeof thing2 === 'number'){
-        result = thing1 + thing2
-    } else {
-        result = input1.toString() + input2.toString()
-    }
-    return result
-}
+// function add(thing1: number | string, thing2: number | string){
+//     let result
+//     if(typeof thing1 === 'number' && typeof thing2 === 'number'){
+//         result = thing1 + thing2
+//     } else {
+//         result = input1.toString() + input2.toString()
+//     }
+//     return result
+// }
 
 type FieldPosition = 'GOALIE' | 'STRIKER'|'MIDFIELD'|'DEFENDER' 
 
-//Literal and Type Aliases
-const player: {
+interface PlayerConfig {
     name: string;
     age: number;
-    hobbies: string[];
+    hobbies?: string[];
     position: FieldPosition
-} = {
+}
+
+//Literal and Type Aliases
+const player: PlayerConfig = {
     name: "Bob",
     age: 23,
     hobbies: ["books", "music"],
     position: 'GOALIE'
 }
+
+// check the cool Class/Interface stuff
+
+
+// Functions Return Types
+
+// function add(thing1: number, thing2: number): string{
+//     return thing1 + thing2
+// }
+
+function add(thing1: number, thing2: number): number{
+    return thing1 + thing2
+}
+
+// function printGreeting(name: string){
+//     console.log(`Hello, ${name}!`)
+// }
+function printGreeting(name: string): void{
+    console.log(`Hello, ${name}!`)
+}
+
+//Function types
+//let greetUser = Function;
+let greetUser: (a: string) => void;
+greetUser = add;
+greetUser = printGreeting;
+//console.log(greetUser('bob'))
+
+//unknown
+
+// let userInput: unknown;
+
+// function generateError(message: string, code: number): never {
+//     throw {message, code}
+// }
