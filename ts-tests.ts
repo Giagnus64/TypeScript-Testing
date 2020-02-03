@@ -34,22 +34,27 @@
 
 
 // pre-declared types
-const person: {
-    name: string;
-    age: number;
-    hobbies: string[];
-} = {
+// const person: {
+//     name: string;
+//     age: number;
+//     hobbies: string[];
+// } = {
+//     name: 'Bob',
+//     age: 24,
+//     hobbies: ['books', 'music'],
+//     position: 'goalie',
+
+// }
+
+//type inference
+const player = {
     name: 'Bob',
     age: 24,
-    hobbies: ['books', 'music'],
+    hobbies: ['books', 'music', 24],
 }
 
-// //type inference
-// const player = {
-//     name: 'Bob',
-//     age: '24',
-//     hobbies: ['books', 'music'],
-// }
+player.name = 24;
+player.hobbies.push(3)
 
 
 // enum FieldPosition {GOALIE, STRIKER, MIDFIELD, DEFENDER};

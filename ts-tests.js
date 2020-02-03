@@ -1,28 +1,40 @@
-var numButton = document.querySelector(".add-numbers");
-var strButton = document.querySelector(".add-with-string");
-var num1Input = document.querySelector(".num1-input");
-var num2Input = document.querySelector(".num2-input");
-var strInput = document.querySelector(".string-input");
-var answer = document.querySelector(".answer");
-function add(thing1, thing2, phrase, showString) {
-    return showString ? phrase + thing1 + thing2 : thing1 + thing2;
-}
-numButton.addEventListener("click", function (e) {
-    answer.innerText = add(num1Input.value, num2Input.value, strInput.value, false);
-});
-strButton.addEventListener("click", function (e) {
-    answer.innerText = add(num1Input.value, num2Input.value, strInput.value, true);
-});
-// // pre-declared types
-// const person: {
-//     name: 'Bob';
-//     age: 24;
-//     hobbies: string[];
-// } = {
-//     name: 'Bob',
-//     age: 24,
-//     hobbies: ['books', 'music'],
+// const numButton = document.querySelector(".add-numbers")! as HTMLButtonElement;
+// const strButton = document.querySelector(".add-with-string")! as HTMLButtonElement;
+// const num1Input = document.querySelector(".num1-input")! as HTMLInputElement;
+// const num2Input = document.querySelector(".num2-input")! as HTMLInputElement;
+// const strInput = document.querySelector(".string-input")! as HTMLInputElement;
+// const answer = document.querySelector(".answer")! as any;
+// function add(
+//   thing1: number,
+//   thing2: number,
+//   phrase: string,
+//   showString: boolean
+// ) {
+//   return showString ? phrase + thing1 + thing2: thing1 + thing2;
 // }
+// numButton.addEventListener("click", e => {
+//   answer.innerText = add(
+//     num1Input.value,
+//     num2Input.value,
+//     strInput.value,
+//     false
+//   );
+// });
+// strButton.addEventListener("click", e => {
+//   answer.innerText = add(
+//     num1Input.value,
+//     num2Input.value,
+//     strInput.value,
+//     true
+//   );
+// });
+// pre-declared types
+var person = {
+    name: 'Bob',
+    age: 24,
+    hobbies: ['books', 'music', 24],
+    position: 'goalie'
+};
 // //type inference
 // const player = {
 //     name: 'Bob',
