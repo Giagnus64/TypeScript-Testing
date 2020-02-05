@@ -28,6 +28,7 @@
 //     true
 //   );
 // });
+
 // pre-declared types
 var person = {
     name: 'Bob',
@@ -35,6 +36,7 @@ var person = {
     hobbies: ['books', 'music', 24],
     position: 'goalie'
 };
+
 // //type inference
 // const player = {
 //     name: 'Bob',

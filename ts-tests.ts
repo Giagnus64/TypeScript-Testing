@@ -46,40 +46,43 @@
 
 // }
 
-//type inference
-const player = {
-    name: 'Bob',
-    age: 24,
-    hobbies: ['books', 'music', 24],
-}
-
-player.name = 24;
-player.hobbies.push(3)
-
-
-// enum FieldPosition {GOALIE, STRIKER, MIDFIELD, DEFENDER};
-// // pre-declared types
-// const player: {
-//     name: 'Bob';
-//     age: 24;
-//     hobbies: string[];
-//     team: [string, number];
-//     position: number;
-// } = {
-//     name : 'Bob',
-//     age: 24,
-//     hobbies: ['books', 'music'],
-//     team: ['AC Milan', 35],
-//     position: FieldPosition.GOALIE
-// }
 // //type inference
 // const player = {
-//     name : 'Bob',
-//     age: '24',
+//     name: 'Bob',
+//     age: 24,
 //     hobbies: ['books', 'music'],
-//     team: ['AC Milan', 35],
-//     fieldPosition: FieldPosition.GOALIE
 // }
+
+
+
+
+enum FieldPosition {GOALIE, STRIKER, MIDFIELD, DEFENDER};
+//pre-declared types
+const player: {
+    name: 'Bob';
+    age: 24;
+    hobbies: string[];
+    team: [string, number];
+    position: number;
+    active: any;
+} = {
+    name : 'Bob',
+    age: 24,
+    hobbies: ['books', 'music'],
+    team: ['AC Milan', 35],
+    position: FieldPosition.GOALIE, 
+    active: 'injured'
+}
+
+//type inference
+const player = {
+    name : 'Bob',
+    age: '24',
+    hobbies: ['books', 'music'],
+    team: ['AC Milan', 35],
+    fieldPosition: FieldPosition.GOALIE,
+    active: 'injured',
+}
 
 
 
