@@ -114,11 +114,6 @@ interface PlayerConfig {
     age: number;
     jerseyNumber?: (number | string)
 }
-//ERROR!
-const player1: PlayerConfig = {
-    name: "Jason",
-    jerseyNumber: "34"
-}
 
 interface SoccerPlayer extends PlayerConfig {
     position: FieldPosition
@@ -126,14 +121,14 @@ interface SoccerPlayer extends PlayerConfig {
     active?: boolean
 }
 
-
-class Player implements PlayerConfig {
-    constructor(public name: string, public age: number, public position: FieldPosition, public team?:[string, number] public active?: boolean){
+class Player implements SoccerPlayer {
+    constructor(public name: string, public age: number, public position: FieldPosition, public team?:[string, number], public active?: boolean, public jerseyNumber?: (number|string)){
     }
 }
 const bob = new Player("Bob", 23, 'STRIKER', ['AC Milan', 45], true)
 const dan = new Player("Dan", 23, 'GOALIE')
-
+dan.active = true;
+dan.jerseyNumber = 34;
 
 
 // check the cool Class/Interface stuff
