@@ -56,32 +56,32 @@
 
 
  
-type FieldPosition = 'GOALIE'|'STRIKER'|'MIDFIELD'|'DEFENDER'
-//pre-declared types
-const player: {
-    name: 'Bob';
-    age: 24;
-    hobbies: string[];
-    team: [string, number];
-    position: FieldPosition
-    active: boolean;
-} = {
-    name : 'Bob',
-    age: 24,
-    hobbies: ['books', 'music'],
-    team: ['AC Milan', 35],
-    position: 'STRIKER', 
-    active: false
-}
+// type FieldPosition = 'GOALIE'|'STRIKER'|'MIDFIELD'|'DEFENDER'
+// //pre-declared types
+// const player: {
+//     name: 'Bob';
+//     age: 24;
+//     hobbies: string[];
+//     team: [string, number];
+//     position: FieldPosition
+//     active: boolean;
+// } = {
+//     name : 'Bob',
+//     age: 24,
+//     hobbies: ['books', 'music'],
+//     team: ['AC Milan', 35],
+//     position: 'SWEEPER', 
+//     active: false
+// }
 
-// //type inference
-const player = {
-    name : 'Bob',
-    age: '24',
-    hobbies: ['books', 'music'],
-    team: ['AC Milan', 35],
-    fieldPosition: FieldPosition.GOALIE,
-    active: false,
+// // //type inference
+// const player = {
+//     name : 'Bob',
+//     age: '24',
+//     hobbies: ['books', 'music'],
+//     team: ['AC Milan', 35],
+//     fieldPosition: FieldPosition.GOALIE,
+//     active: false,
 }
 
 
@@ -107,27 +107,34 @@ const player = {
 //     return result
 // }
 
-// type FieldPosition = 'GOALIE' | 'STRIKER'|'MIDFIELD'|'DEFENDER' 
+type FieldPosition = 'GOALIE'|'STRIKER'|'MIDFIELD'|'DEFENDER' 
 
-// interface PlayerConfig {
-//     name: string;
-//     age: number;
-//     hobbies?: string[];
-//     position: FieldPosition
-// }
+interface PlayerConfig {
+    name: string;
+    age: number;
+    jerseyNumber?: (number | string)
+}
+//ERROR!
+const player1: PlayerConfig = {
+    name: "Jason",
+    jerseyNumber: "34"
+}
 
-// //Literal and Type Aliases
-// const player: PlayerConfig = {
-//     name: "Bob",
-//     age: 23,
-//     hobbies: ["books", "music"],
-//     position: 'GOALIE'
-// }
-// class Player implements PlayerConfig {
-//     constructor(public name: string, public age: number, public position: FieldPosition){}
-// }
+interface SoccerPlayer extends PlayerConfig {
+    position: FieldPosition
+    team?:[string, number]
+    active?: boolean
+}
 
-// const dude = new Player("Dan", 23, 'GOALIE')
+
+class Player implements PlayerConfig {
+    constructor(public name: string, public age: number, public position: FieldPosition, public team?:[string, number] public active?: boolean){
+    }
+}
+const bob = new Player("Bob", 23, 'STRIKER', ['AC Milan', 45], true)
+const dan = new Player("Dan", 23, 'GOALIE')
+
+
 
 // check the cool Class/Interface stuff
 
