@@ -55,33 +55,33 @@
 
 
 
-
-enum FieldPosition {GOALIE, STRIKER, MIDFIELD, DEFENDER};
+ 
+type FieldPosition = 'GOALIE'|'STRIKER'|'MIDFIELD'|'DEFENDER'
 //pre-declared types
 const player: {
     name: 'Bob';
     age: 24;
     hobbies: string[];
     team: [string, number];
-    position: number;
-    active: any;
+    position: FieldPosition
+    active: boolean;
 } = {
     name : 'Bob',
     age: 24,
     hobbies: ['books', 'music'],
     team: ['AC Milan', 35],
-    position: FieldPosition.GOALIE, 
-    active: 'injured'
+    position: 'STRIKER', 
+    active: false
 }
 
-//type inference
+// //type inference
 const player = {
     name : 'Bob',
     age: '24',
     hobbies: ['books', 'music'],
     team: ['AC Milan', 35],
     fieldPosition: FieldPosition.GOALIE,
-    active: 'injured',
+    active: false,
 }
 
 
