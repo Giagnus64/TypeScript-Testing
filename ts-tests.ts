@@ -82,7 +82,7 @@
 //     team: ['AC Milan', 35],
 //     fieldPosition: FieldPosition.GOALIE,
 //     active: false,
-}
+// }
 
 
 
@@ -107,49 +107,46 @@
 //     return result
 // }
 
-type FieldPosition = 'GOALIE'|'STRIKER'|'MIDFIELD'|'DEFENDER' 
+// type FieldPosition = 'GOALIE'|'STRIKER'|'MIDFIELD'|'DEFENDER' 
 
-interface PlayerConfig {
-    name: string;
-    age: number;
-    jerseyNumber?: (number | string)
-}
+// interface PlayerConfig {
+//     name: string;
+//     age: number;
+//     jerseyNumber?: (number | string)
+// }
 
-interface SoccerPlayer extends PlayerConfig {
-    position: FieldPosition
-    team?:[string, number]
-    active?: boolean
-}
+// interface SoccerPlayer extends PlayerConfig {
+//     position: FieldPosition
+//     team?:[string, number]
+//     active?: boolean
+// }
 
-class Player implements SoccerPlayer {
-    constructor(public name: string, public age: number, public position: FieldPosition, public team?:[string, number], public active?: boolean, public jerseyNumber?: (number|string)){
-    }
-}
-const bob = new Player("Bob", 23, 'STRIKER', ['AC Milan', 45], true)
-const dan = new Player("Dan", 23, 'GOALIE')
-dan.active = true;
-dan.jerseyNumber = 34;
+// class Player implements SoccerPlayer {
+//     constructor(public name: string, public age: number, public position: FieldPosition, public team?:[string, number], public active?: boolean, public jerseyNumber?: (number|string)){
+//     }
+// }
+// const bob = new Player("Bob", 23, 'STRIKER', ['AC Milan', 45], true)
+// const dan = new Player("Dan", 23, 'GOALIE')
+// dan.active = true;
+// dan.jerseyNumber = 34;
 
 
 // check the cool Class/Interface stuff
 
 
-// Functions Return Types
+//Functions Return Types
 
 // function add(thing1: number, thing2: number): string{
 //     return thing1 + thing2
 // }
 
-// function add(thing1: number, thing2: number): number{
-//     return thing1 + thing2
-// }
+function add(thing1: number, thing2: number): {
+    return thing1 + thing2
+}
 
-// // function printGreeting(name: string){
-// //     console.log(`Hello, ${name}!`)
-// // }
-// function printGreeting(name: string): void{
-//     console.log(`Hello, ${name}!`)
-// }
+function printGreeting(name: string): void{
+    console.log(`Hello, ${name}!`)
+}
 
 // //Function types
 // //let greetUser = Function;
