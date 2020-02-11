@@ -140,7 +140,7 @@
 //     return thing1 + thing2
 // }
 
-function add(thing1: number, thing2: number): {
+function add(thing1: number, thing2: number) {
     return thing1 + thing2
 }
 
